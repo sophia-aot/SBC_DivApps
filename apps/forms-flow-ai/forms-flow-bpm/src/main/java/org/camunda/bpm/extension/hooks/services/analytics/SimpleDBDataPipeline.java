@@ -61,7 +61,7 @@ public class SimpleDBDataPipeline extends AbstractDataPipeline {
                     }
                 }
                 // to handle boolean values coming as string and not getting inserted
-                else if(entry.getValue() == "true" || entry.getValue() == "false") {
+                else if(entry.getValue().toString().toLowerCase() == "true" || entry.getValue().toString().toLowerCase() == "false") {
                     dataMap.put(entry.getKey(), Boolean.parseBoolean(entry.getValue().toString()));
                 } 
                 else {
