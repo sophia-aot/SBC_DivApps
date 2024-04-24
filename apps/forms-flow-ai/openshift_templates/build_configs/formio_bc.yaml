@@ -13,7 +13,7 @@ parameters:
   - name: SOURCE_REPOSITORY_REF
     displayName: Git Reference
     description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.
-    value: v5.1.0
+    value: release/5.1.1
   - name: SOURCE_CONTEXT_DIR
     displayName: Git context directory
     description: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.
@@ -57,7 +57,7 @@ objects:
         imageChange: {}
       - type: ConfigChange
 
-- 
+-
   apiVersion: image.openshift.io/v1
   kind: ImageStream
   metadata:
