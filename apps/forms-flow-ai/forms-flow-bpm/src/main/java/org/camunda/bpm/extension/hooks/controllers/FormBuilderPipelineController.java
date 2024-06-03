@@ -56,7 +56,7 @@ public class FormBuilderPipelineController {
 
     /**
      * Creates a camunda process instance for the orbeon form data given.
-     * 
+     *
      * @param request The request object containing the CCII form data.
      */
     @PostMapping(value = "/orbeon/data", consumes = MediaType.APPLICATION_XML_VALUE)
@@ -203,13 +203,14 @@ public class FormBuilderPipelineController {
             variables.put("entered_by", new VariableData("orbeon"));
             VariableData serviceMethodData = (VariableData) variables.get("service_method");
             variables.put("engagement_source", new VariableData(serviceMethodData.getValue().toString()));
+            variables.put("service_channel", new VariableData("Service BC Location"));
             VariableData serviceChannelData = (VariableData) variables.get("service_channel");
             if (serviceChannelData.getValue().toString().equals("Service BC Location")) {
                 variables.put("service_location_type", new VariableData("service_centre"));
             } else if (serviceChannelData.getValue().equals("Mobile Outreach Location")) {
                 variables.put("service_location_type", new VariableData("mobile_outreach"));
             }
-            variables.put("service_channel", new VariableData("Service BC Location"));
+            // variables.put("service_channel", new VariableData("Service BC Location"));
             // Check if Orbeon is submitted with a value for "mobile-location"
             if (variables.containsKey("mobile_location")) {
                 // Set location parameter to "Mobile Outreach"
