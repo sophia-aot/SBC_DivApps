@@ -59,7 +59,9 @@ public class FormBuilderPipelineController {
      *
      * @param request The request object containing the CCII form data.
      */
-    @PostMapping(value = "/orbeon/data", consumes = MediaType.APPLICATION_XML_VALUE)
+    // @PostMapping(value = "/orbeon/data", consumes =
+    // MediaType.APPLICATION_XML_VALUE)
+    @PostMapping(value = "/orbeon/data", consumes = { "application/xml", "xml" })
     public void createProcess(HttpServletRequest request) {
         LOGGER.info("Inside Data transformation controller" + request.getParameterMap());
         String formXML = null;
